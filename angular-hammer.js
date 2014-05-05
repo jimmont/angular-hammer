@@ -47,7 +47,7 @@ angular.forEach(hmGestures, function(name){
                 expr(scope, {$event: event});
               });
             },
-            opts = $parse(attr['hmOptions'])(scope, {}),
+            opts = $parse(attr[directiveName + 'Options'] || attr['hmOptions'])(scope, {}),
             hammer;
 
         if (typeof Hammer === 'undefined' || !$window.addEventListener) {
